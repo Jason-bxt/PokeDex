@@ -1,0 +1,336 @@
+@media(max-width:1380px) {
+  .left-arrow{
+    width:80px;
+    height:80px;
+    position:absolute;
+    top: 460px;
+    left: 220px;
+    }
+    .right-arrow {
+      width:80px;
+      height:80px;
+      position:absolute;
+      top: 460px;
+      right: 220px;
+    } 
+}
+
+@media(max-width:1240px) {
+  .left-arrow{
+    width:80px;
+    height:80px;
+    position:absolute;
+    top: 460px;
+    left: 160px;
+    }
+    .right-arrow {
+      width:80px;
+      height:80px;
+      position:absolute;
+      top: 460px;
+      right: 160px;
+    } 
+}
+
+@media(max-width:1100px) {
+  .left-arrow{
+    width:80px;
+    height:80px;
+    position:absolute;
+    top: 460px;
+    left: 60px;
+    }
+    .right-arrow {
+      width:80px;
+      height:80px;
+      position:absolute;
+      top: 460px;
+      right: 60px;
+    } 
+}
+
+
+
+
+
+@media(max-width:800px) {
+  .poke-card{
+    width:340px;
+  }
+  .poke-card-background-img {
+    width: 264px;
+    top: 8px;
+    left: 38px;
+  }
+  .poke-card-pokemon-img {
+    width: 160px;
+    top: 80px;
+    left: 92px;
+  }
+  .poke-card-name {
+    font-size: 30px;
+    top: 22px;
+    left: 32px;
+  }
+  .poke-card-hp{
+    font-size: 28px;
+    top: 24px;
+    left: 200px;
+  }
+  .pokemon-id{
+    font-size: 14px;
+    top: 254px;
+    left: 146px;
+  }
+  .pokemon-height{
+    font-size: 16px;
+    top: 424px;
+    left: 74px;
+  }
+  .pokemon-weight {
+    font-size: 16px;
+    top: 424px;
+    left: 182px;
+  }
+  .attak-name {
+    font-size: 26px;
+    top: 270px;
+    left: 48px;
+  }
+  .attack-stats {
+    display:flex;
+    justify-content: space-between;
+  }
+  .atk-nr {
+    font-size: 26px;
+    top: 272px;
+    left: 262px;
+  }
+  .attak-description{
+    font-size: 14px;
+    width:252px;
+    top: 306px;
+    left: 48px;
+  }
+}
+
+
+@media(max-width:700px) {
+  .left-arrow{
+    width:60px;
+    height:60px;
+    top: 460px;
+    left: 40px;
+    }
+    .right-arrow {
+      width:60px;
+      height:60px;
+      top: 460px;
+      right: 40px;
+    } 
+}
+
+
+@media(max-width:600px) {
+  .poke-card{
+    width:300px;
+  }
+  .poke-card-background-img {
+    width: 230px;
+    top: 8px;
+    left: 36px;
+}
+  
+  .poke-card-pokemon-img {
+    width: 140px;
+    top: 70px;
+    left: 84px;
+  }
+  .poke-card-name {
+    font-size: 28px;
+    top: 18px;
+    left: 28px;
+  }
+  .poke-card-hp{
+    font-size: 26px;
+    top: 20px;
+    left: 174px;
+
+  }
+  .pokemon-id{
+    font-size: 12px;
+    top: 224px;
+    left: 128px;
+  }
+  .pokemon-height{
+    font-size: 15px;
+    top: 374px;
+    left: 62px;
+  }
+  .pokemon-weight {
+    font-size: 15px;
+    top: 374px;
+    left: 160px;
+  }
+  .attak-name {
+    font-size: 24px;
+    top: 240px;
+    left: 30px;
+  }
+  .attack-stats {
+    display:flex;
+    justify-content: space-between;
+  }
+  .atk-nr {
+    font-size: 24px;
+    top: 240px;
+    left: 234px;
+  }
+  .attak-description{
+    font-size: 13px;
+    width: 252px;
+    top: 270px;
+    left: 30px;
+  }
+}
+
+@media(max-width:540px) {
+  .left-arrow{
+    width:40px;
+    height:40px;
+    top: 460px;
+    left: 20px;
+    }
+    .right-arrow {
+      width:40px;
+      height:40px;
+      top: 460px;
+      right: 20px;
+    } 
+}
+
+
+
+
+
+@media(max-width:460px) {
+  .poke-card{
+    width:220px;
+  }
+  .poke-card-background-img {
+    width: 172px;
+    top: 6px;
+    left: 24px;
+}
+  
+  .poke-card-pokemon-img {
+    width: 110px;
+    top: 48px;
+    left: 56px;
+  }
+  .poke-card-name {
+    font-size: 24px;
+    top: 11px;
+    left: 20px;
+  }
+  .poke-card-hp{
+    font-size: 20px;
+    top: 14px;
+    left: 126px;
+  }
+  .pokemon-id{
+    font-size: 9px;
+    top: 165px;
+    left: 94px;
+  }
+  .pokemon-height{
+    font-size: 11px;
+    top: 275px;
+    left: 44px;
+  }
+  .pokemon-weight {
+    font-size: 11px;
+    top: 274px;
+    left: 122px;
+  }
+  .attak-name {
+    font-size: 20px;
+    top: 176px;
+    left: 30px;
+  }
+  .attack-stats {
+    display:flex;
+    justify-content: space-between;
+  }
+  .atk-nr {
+    font-size: 20px;
+    top: 176px;
+    left: 168px;
+  }
+  .attak-description{
+    font-size: 10px;
+    width: 170px;
+    top: 202px;
+    left: 30px;
+  }
+  .left-arrow{
+    width:40px;
+    height:40px;
+    top: 460px;
+    left: 8px;
+    }
+    .right-arrow {
+      width:40px;
+      height:40px;
+      top: 460px;
+      right:8px;
+    } 
+}
+
+@media(max-width:360px) {
+  .left-arrow{
+    width: 40px;
+    height: 40px;
+    top: 240px;
+    left: 144px;
+    }
+    .right-arrow {
+      width: 40px;
+      height: 40px;
+      top: 662px;
+      right: 154px;
+    } 
+}
+
+@media(max-width:332px) {
+  .left-arrow{
+    top: 240px;
+    left: 134px;
+    }
+    .right-arrow {
+      top: 662px;
+      right: 144px;
+    } 
+}
+
+@media(max-width:304px) {
+  .left-arrow{
+    top: 240px;
+    left: 118px;
+    }
+    .right-arrow {
+      top: 662px;
+      right: 122px;
+    } 
+}
+
+@media(max-width:284px) {
+  .left-arrow{
+    top: 240px;
+    left: 92px;
+    }
+    .right-arrow {
+      top: 662px;
+      right: 90px;
+    } 
+}

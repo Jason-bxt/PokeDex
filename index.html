@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    
+    <link rel="stylesheet" href="/css/standart.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/cards.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/overlay.css" />
+    <link rel="stylesheet" href="/css/overlay-responsive.css" />
+    <link rel="icon" href="./assets/img/pokeball-3.png" />
+  </head>
+
+  <body onload="init()">
+
+    <header>  
+      <img class="pokedex" src="./assets/img/pokedex.png" alt="Pokemon logo" />
+
+      <div class="header-div">
+        <img class="enton" src="./assets/img/enton.png" alt="Pokeball picture" />
+        <input id="search-input" class="input" type="text" placeholder="Search Pokemon" oninput="searchPokemons()" />
+      </div>
+    </header>
+
+    <main>
+      <div id="content"></div>
+      <div id="overlay"></div>
+      <div id="evo-overlay" ></div>
+      <div onclick="addLoadMoreButton()" id="load-more"></div>
+    </main>
+
+    <footer>
+      <img class="left-img" src="./assets/img/pngegg (1).png" alt="Enton picture" />
+
+      <div class="privacy-div">
+        <a href="Imprint/Imprint.html">Imprint</a>
+        
+        |<a href="privacy-policy/privacy.html">Privacy</a>
+      </div>
+
+      <img class="right-img" src="./assets/img/pngegg (6).png" alt="" />
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
