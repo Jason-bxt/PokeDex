@@ -52,9 +52,6 @@ function init() {
   addLoadMoreButton(); 
 }
 
-
-
-
 async function loadPokemons() {
   try {
     let response = await fetch(pokeApi(offset));
@@ -72,8 +69,6 @@ async function loadPokemons() {
   }
 }
 
-
-
 function searchPokemons() {
   const searchTerm = document.getElementById('search-input').value.toLowerCase();
   
@@ -86,8 +81,6 @@ function searchPokemons() {
   }
   renderContent(filteredPokemonArray); 
 }
-
-
 
 function addLoadMoreButton() {
   const loadMoreDiv = document.getElementById('load-more');
@@ -157,26 +150,6 @@ overlayRef.onclick = function(event) {
 };
 }
 
-
-// async function renderEvoOverlay(i) {
-//   let overlayRef = document.getElementById("evo-overlay");
-//   overlayRef.innerHTML = "";
-
-//   overlayRef.style.display = "flex";
-
-//   overlayRef.innerHTML += /*html*/ `
-//     <div class "overlay-content">
-
-//     </div>
-//   `;
-
-// overlayRef.onclick = function() {
-//   overlayRef.style.display = "none"; // Close the overlay
-// };
-// }
-
-
-
 function navigatePokemon(direction) {
   currentPokemonIndex += direction; 
   if (currentPokemonIndex < 0) {
@@ -220,7 +193,3 @@ function renderContent(filteredArray = pokemonArray) {
     `;
   }
 }
-
-
-// loading screen -
-//      - enton with fragezeichen(drehend)
