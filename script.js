@@ -4,47 +4,47 @@ const pokemonArray = [];
 const filteredPokemonArray = [];
 let currentPokemonIndex = 0;
 const overlayCardArray = {
-  fire: "/assets/card/fire.png",
-  water: "/assets/card/water.png",
-  grass: "/assets/card/grass.png",
-  electric: "/assets/card/electric.png",
-  dark: "/assets/card/dark.png",
-  fighting: "/assets/card/dark.png",
-  psychic: "/assets/card/psychic.png",
-  steel: "/assets/card/steel.png",
-  stellar: "/assets/card/stellar.png",
-  rock: "/assets/card/steel.png",
-  poison: "/assets/card/psychic.png",
-  normal: "/assets/card/stellar.png",
-  ice: "/assets/card/water.png",
-  ground: "/assets/card/dark.png",
-  ghost: "/assets/card/psychic.png",
-  flying: "/assets/card/stellar.png",
-  fairy: "/assets/card/psychic.png",
-  dragon: "/assets/card/stellar.png",
-  bug: "/assets/card/grass.png",
+  fire: "./assets/card/fire.png",
+  water: "./assets/card/water.png",
+  grass: "./assets/card/grass.png",
+  electric: "./assets/card/electric.png",
+  dark: "./assets/card/dark.png",
+  fighting: "./assets/card/dark.png",
+  psychic: "./assets/card/psychic.png",
+  steel: "./assets/card/steel.png",
+  stellar: "./assets/card/stellar.png",
+  rock: "./assets/card/steel.png",
+  poison: "./assets/card/psychic.png",
+  normal: "./assets/card/stellar.png",
+  ice: "./assets/card/water.png",
+  ground: "./assets/card/dark.png",
+  ghost: "./assets/card/psychic.png",
+  flying: "./assets/card/stellar.png",
+  fairy: "./assets/card/psychic.png",
+  dragon: "./assets/card/stellar.png",
+  bug: "./assets/card/grass.png",
 };
 
 const backgroundPictureArray = {
-  fire: "/assets/cart-img/fire.jpeg",
-  water: "/assets/cart-img/water.jpeg",
-  grass: "/assets/cart-img/plant.jpeg",
-  electric: "/assets/cart-img/electric.jpeg",
-  dark: "/assets/cart-img/dark.jpeg",
-  fighting: "/assets/cart-img/fighting.jpeg",
-  psychic: "/assets/cart-img/psychic.jpeg",
-  steel: "/assets/cart-img/steel.jpeg",
-  stellar: "/assets/cart-img/stellar.jpeg",
-  rock: "/assets/cart-img/rock.jpeg",
-  poison: "/assets/cart-img/poison.jpeg",
-  normal: "/assets/cart-img/normal.jpeg",
-  ice: "/assets/cart-img/ice.jpeg",
-  ground: "/assets/cart-img/ground.jpeg",
-  ghost: "/assets/cart-img/ghost.jpeg",
-  flying: "/assets/cart-img/flying.jpeg",
-  fairy: "/assets/cart-img/fairy.jpeg",
-  dragon: "/assets/cart-img/dragon.jpeg",
-  bug: "/assets/cart-img/bug.jpeg",
+  fire: "./assets/cart-img/fire.jpeg",
+  water: "./assets/cart-img/water.jpeg",
+  grass: "./assets/cart-img/plant.jpeg",
+  electric: "./assets/cart-img/electric.jpeg",
+  dark: "./assets/cart-img/dark.jpeg",
+  fighting: "./assets/cart-img/fighting.jpeg",
+  psychic: "./assets/cart-img/psychic.jpeg",
+  steel: "./assets/cart-img/steel.jpeg",
+  stellar: "./assets/cart-img/stellar.jpeg",
+  rock: "./assets/cart-img/rock.jpeg",
+  poison: "./assets/cart-img/poison.jpeg",
+  normal: "./assets/cart-img/normal.jpeg",
+  ice: "./assets/cart-img/ice.jpeg",
+  ground: "./assets/cart-img/ground.jpeg",
+  ghost: "./assets/cart-img/ghost.jpeg",
+  flying: "./assets/cart-img/flying.jpeg",
+  fairy: "./assets/cart-img/fairy.jpeg",
+  dragon: "./assets/cart-img/dragon.jpeg",
+  bug: "./assets/cart-img/bug.jpeg",
 };
 
 function init() {
@@ -53,21 +53,31 @@ function init() {
 }
 
 async function loadPokemons() {
+  const loadMoreDiv = document.getElementById('load-more');
+  loadMoreDiv.disabled = true; // Disable the button
+
   try {
     let response = await fetch(pokeApi(offset));
     let responseAsJson = await response.json();
 
-    for (let pokemon of responseAsJson.results) {
-      let pokemonDetails = await fetch(pokemon.url);
-      let pokemonDetailsJson = await pokemonDetails.json();
-      pokemonArray.push(pokemonDetailsJson);
-    }
+    // Create an array of promises for fetching Pokémon details
+    const pokemonPromises = responseAsJson.results.map(pokemon => fetch(pokemon.url).then(res => res.json()));
+
+    // Wait for all Pokémon details to be fetched
+    const pokemonDetailsArray = await Promise.all(pokemonPromises);
+
+    // Push all fetched Pokémon details into the main array
+    pokemonArray.push(...pokemonDetailsArray);
+    
     renderContent();
     offset += 15; 
   } catch (error) {
     console.error("loadPokemons Fetch error", error);
+  } finally {
+    loadMoreDiv.disabled = false; // Re-enable the button after all Pokémon are loaded
   }
 }
+
 
 function searchPokemons() {
   const searchTerm = document.getElementById('search-input').value.toLowerCase();
