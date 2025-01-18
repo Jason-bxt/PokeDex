@@ -78,6 +78,7 @@ async function loadPokemons() {
   }
 }
 
+
 function searchPokemons() {
   const searchTerm = document
     .getElementById("search-input")
